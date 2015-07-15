@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Testing Page</h1>
+</head>
+<body onload="getTextFromURL()">
+    <h3>Click the button to test out the application.</h3>
+        <form>X-Coord:<br><input type="text" name="x" value="41.89"><br>Y-Coord:<br><input type="text" name="y" value="-87.73"><br>
+            <button onclick="getTextFromURL()">Get Coordinates</button>
+            <script>
+                function getTextFromURL()
+                {
+                    var xmlHttp = new XMLHttpRequest;
+                    // Get the longitude
+                    var x = document.getElementsByName('x')[0].value;
+                    // Get the latitude
+                    var y = document.getElementsByName('y')[0].value;
+                    var link = "https://data.cityofchicago.org/resource/ijzp-q8t2.json?$limit=1&$where=within_circle(location," + x + "," + y + ",100)";
+                    
+                    //console.log(link);
+                    var openWindow = window.open(link);
+                    openWindow.close();
+                    xmlHttp.open("GET", URL, true);
+                    //xmlHttp.send(null);
+                    console.log(xmlHttp.responseText);
+                    return xmlHttp.responseText;
+                    //myFunc();
+                }
+            </script>
+            
+        </form>
+</body>
+</html>
