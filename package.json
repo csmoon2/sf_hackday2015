@@ -1,0 +1,14 @@
+{
+  "name": "sf_hackday2015",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Christopher Choi <danhee1012@gmail.com>",
+  "main": "./app.js",
+  "dependencies": {
+    "forecast": "^0.2.1",
+    "soda-js": "^0.2.1"
+  },
+  "engines": {
+    "node": "0.12"
+  }
+}
