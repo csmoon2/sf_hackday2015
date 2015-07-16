@@ -105,26 +105,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </style>
 
         <script>
-            var firstLoad = true
             var x = parseFloat(document.getElementsByName('x')[0].value);
             //alert(x);
             var y = parseFloat(document.getElementsByName('y')[0].value);
             
             function initialize() {
-                if (firstLoad = false)
-                {
-                    var mapOptions = {zoom: 18, center: new google.maps.LatLng(x,y)};
-                }
-                else
-                {
                     var mapOptions = {zoom: 18, center: new google.maps.LatLng(41.8789, -87.6358)
                         //center: new google.maps.LatLng(x,y)
                                      };
-                    firstLoad = false;
-                }
+                    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            }
 
-                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
+            
             function loadScript() {
                 var script = document.createElement('script');
                 script.type = 'text/javascript';
