@@ -17,7 +17,7 @@
     </head>
     <body>
         <div style="z-index: 10; opacity: 0.8; background-color: white; position: absolute">
-            <h3>Put X and Y</h3>
+            <h1>Put X and Y</h1>
             <form>
                 <form>
                     <input type="text" id="formValueId" name="valueId"/>
@@ -25,8 +25,8 @@
                     <input type="button" id="theButton"/>
                 </form>
                 <script>
-                    var a = 41.8369;
-                    var b = -87.6847;
+                    var a = 0;
+                    var b = 0;
                     function initialize() {
                         var mapOptions = {
                             zoom: 12,
@@ -46,13 +46,6 @@
                             streetViewControlOptions: {
                                 position: google.maps.ControlPosition.LEFT_TOP
                             }
-                    
-                            var infoWindow = new google.maps.InfoWindow({
-                                content: <h1>TEST</h1>
-                            });
-                        
-                            var marker = new google.maps.Marker({
-                                
                         }
                         var map = new google.maps.Map(document.getElementById('map-canvas'),
                                                       mapOptions);
